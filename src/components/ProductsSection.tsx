@@ -39,22 +39,23 @@ const ProductsSection = () => {
   return (
     <section className="py-8 lg:py-12 bg-background">
       <div className="px-6 lg:px-20">
-        {/* Left side text */}
-        <div className="mb-8">
-          <p className="text-sm text-muted-foreground uppercase tracking-wider mb-2">Products</p>
-          <h3 className="text-2xl lg:text-3xl font-bold text-foreground leading-tight max-w-xs">
+        {/* Products badge and heading */}
+        <div className="mb-6 lg:mb-8">
+          <span className="inline-block px-3 py-1 text-xs font-medium text-muted-foreground bg-secondary rounded-full mb-3">
+            Products
+          </span>
+          <h3 className="text-xl lg:text-3xl font-bold text-foreground leading-tight max-w-xs">
             DISCOVER THE VALU IN EVERY MOMENT
           </h3>
         </div>
       </div>
 
       {/* Scrollable products */}
-      <div className="flex gap-6 overflow-x-auto px-6 lg:px-20 pb-6 scrollbar-hide">
+      <div className="flex gap-4 lg:gap-6 overflow-x-auto px-6 lg:px-20 pb-6 scrollbar-hide snap-x snap-mandatory">
         {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            {...product}
-          />
+          <div key={index} className="snap-start shrink-0 w-[260px] lg:w-[280px]">
+            <ProductCard {...product} />
+          </div>
         ))}
       </div>
     </section>
