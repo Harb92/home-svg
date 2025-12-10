@@ -1,22 +1,15 @@
+import heroBackground from "@/assets/hero-background.png";
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] lg:min-h-screen flex flex-col justify-end overflow-hidden">
-      {/* Background with gradient overlay */}
+      {/* Hero Background Image - recommended size: 1920px × 1080px */}
       <div 
-        className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-teal-500 to-cyan-400"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          background: "linear-gradient(135deg, #0891b2 0%, #14b8a6 50%, #06b6d4 100%)"
+          backgroundImage: `url(${heroBackground})`
         }}
-      >
-        {/* Decorative 3D cubes pattern overlay */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-20 right-10 lg:right-20 w-16 lg:w-32 h-16 lg:h-32 bg-cyan-300/40 rounded-xl rotate-12 blur-sm" />
-          <div className="absolute top-32 lg:top-40 right-20 lg:right-40 w-12 lg:w-24 h-12 lg:h-24 bg-teal-400/30 rounded-xl -rotate-6" />
-          <div className="absolute top-48 lg:top-60 right-6 lg:right-10 w-10 lg:w-20 h-10 lg:h-20 bg-cyan-200/40 rounded-xl rotate-45" />
-          <div className="absolute top-10 left-1/4 lg:left-1/3 w-14 lg:w-28 h-14 lg:h-28 bg-teal-300/30 rounded-xl -rotate-12" />
-          <div className="absolute bottom-40 right-1/4 w-10 lg:w-16 h-10 lg:h-16 bg-cyan-400/30 rounded-xl rotate-12" />
-        </div>
-      </div>
+      />
 
       {/* Content */}
       <div className="relative z-10 px-6 lg:px-20 pb-16 lg:pb-32">
