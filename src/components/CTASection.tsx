@@ -1,25 +1,35 @@
 const CTASection = () => {
   return (
-    <section className="bg-background lg:bg-[#D4C4B0] py-12 lg:py-24 px-6 lg:px-20">
+    <section className="bg-background lg:bg-[#D4C4B0] py-6 lg:py-24 px-6 lg:px-20">
       <div className="max-w-[1140px] mx-auto">
-        {/* Mobile: Simple white background layout */}
-        <div className="lg:hidden">
-          <h2 className="text-3xl font-bold text-[#102826] mb-3 leading-tight">
-            Be part of<br />something big
-          </h2>
-          <p className="text-[#102826]/70 mb-6 text-sm leading-relaxed">
-            Over 3 million people have already chosen Valu. Download the app and experience the difference.
-          </p>
-          
-          {/* Outline button for mobile */}
-          <button className="border-2 border-[#102826] text-[#102826] font-semibold px-6 py-3 rounded-xl hover:bg-[#102826] hover:text-white transition-colors">
-            Download Valu App
-          </button>
+        {/* Mobile: Gradient card layout matching Figma */}
+        <div className="lg:hidden flex justify-center">
+          <div 
+            className="flex flex-col items-center px-10 py-10 gap-2 w-full max-w-[345px] rounded-[40px]"
+            style={{
+              background: 'linear-gradient(102.55deg, #D0DDDC 9.47%, #99A4A3 96.38%)',
+            }}
+          >
+            {/* Inner wrapper - left aligned content */}
+            <div className="flex flex-col items-start gap-2 w-full">
+              <h2 className="text-[28px] font-bold text-[#102826] leading-tight">
+                Be part of<br />something big
+              </h2>
+              <p className="text-[#102826]/70 text-sm leading-relaxed">
+                Over 3 million people have already chosen Valu. Download the app and experience the difference.
+              </p>
+              
+              {/* Outline button */}
+              <button className="mt-4 border-2 border-[#102826] text-[#102826] font-semibold px-6 py-3 rounded-xl hover:bg-[#102826] hover:text-white transition-colors">
+                Download Valu App
+              </button>
+            </div>
 
-          {/* Phone mockup placeholder */}
-          <div className="mt-8 flex justify-center">
-            <div className="w-64 h-[420px] bg-secondary/50 rounded-[32px] border-2 border-dashed border-muted-foreground/30 flex items-center justify-center">
-              <span className="text-sm text-muted-foreground">Phone Mockup</span>
+            {/* Phone mockup placeholder */}
+            <div className="mt-4 flex justify-center w-full">
+              <div className="w-48 h-[280px] bg-[#102826]/10 rounded-[32px] border-2 border-dashed border-[#102826]/20 flex items-center justify-center">
+                <span className="text-xs text-[#102826]/40">Phone Mockup</span>
+              </div>
             </div>
           </div>
         </div>
