@@ -82,7 +82,7 @@ const ProductsSection = () => {
     */
     <section className="bg-[#F4F7F7] overflow-hidden w-full">
       <div className="py-[60px]">
-        <div className="relative flex flex-col lg:flex-row lg:items-center h-auto lg:h-[402px]">
+        <div className="relative flex flex-col lg:flex-row lg:items-center lg:gap-16 h-auto lg:h-[402px]">
           {/* 
             Left side - Text content
             HIGHER Z-INDEX: Cards swipe underneath this section when dragging carousel.
