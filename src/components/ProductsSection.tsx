@@ -77,17 +77,18 @@ const ProductsSection = () => {
       PRODUCTS SECTION
       Figma dimensions: Content area 1440px × 521px
       Cards: 280px × 402px with 32px border-radius
-      Layout: Left text column + right carousel showing 3 cards + portion of 4th
+      Layout: Left text column + right carousel extending to screen edge
+      The partial 4th card should appear from outside the viewport
     */
-    <section className="bg-[#F4F7F7] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-20 py-[60px]">
-        <div className="relative flex flex-col lg:flex-row lg:items-center lg:gap-12 h-auto lg:h-[402px]">
+    <section className="bg-[#F4F7F7] overflow-hidden w-full">
+      <div className="py-[60px]">
+        <div className="relative flex flex-col lg:flex-row lg:items-center h-auto lg:h-[402px]">
           {/* 
             Left side - Text content
             HIGHER Z-INDEX: Cards swipe underneath this section when dragging carousel.
-            This creates the visual effect of cards going behind the text area.
+            Has left padding to align with site content, but carousel extends full width right.
           */}
-          <div className="lg:w-[320px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7] pr-4">
+          <div className="px-6 lg:pl-20 lg:pr-0 lg:w-[400px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7]">
             {/* Products badge */}
             <span className="inline-block px-4 py-1.5 text-xs font-medium text-[#345451] bg-white rounded-full mb-4 border border-[#E5E7EB]">
               Products
@@ -103,12 +104,11 @@ const ProductsSection = () => {
 
           {/* 
             Right side - Carousel
+            EXTENDS TO RIGHT EDGE: No right padding, cards flow to screen edge.
+            Partial card visible at edge creates "swiping from outside" effect.
             SWIPE BY DRAGGING: No loop, cards end after last item.
-            Cards go underneath the left text section when swiping.
-            OVERFLOW HIDDEN: Prevents carousel from expanding page width.
-            Shows 3 cards + portion of 4th card, swipe to see more.
           */}
-          <div className="flex-1 overflow-hidden relative z-10">
+          <div className="flex-1 overflow-hidden relative z-10 pl-6 lg:pl-0">
             <Carousel
               opts={{
                 align: "start",
