@@ -12,25 +12,117 @@ const BrandsSection = () => {
           </p>
         </div>
 
-        {/* Desktop: Single uploadable image placeholder - 1704x192 */}
+        {/* 
+          BRAND LOGOS IMAGE UPLOAD INSTRUCTIONS:
+          ========================================
+          Upload ONE image that will be repeated across 3 animated rows.
+          
+          Recommended image specs:
+          - Height: 48px
+          - Width: Full width (1440px or wider for seamless looping)
+          - Format: PNG with transparent background preferred
+          
+          The uploaded image will automatically:
+          1. Display in 3 horizontal rows
+          2. Animate with alternating scroll directions (left, right, left)
+          3. Loop seamlessly and continuously
+        */}
+
+        {/* Desktop: Animated 3-row brand logos - 1440px × 192px */}
         <div 
-          className="hidden lg:flex w-full bg-secondary/50 rounded-2xl border-2 border-dashed border-muted-foreground/30 items-center justify-center cursor-pointer hover:bg-secondary/70 transition-colors mx-auto"
-          style={{ maxWidth: '1704px', height: '192px' }}
+          className="hidden lg:block w-full mx-auto relative overflow-hidden"
+          style={{ maxWidth: '1440px', height: '192px' }}
         >
-          <div className="text-center text-muted-foreground">
-            <p className="text-sm font-medium">Brand Logos Image</p>
-            <p className="text-xs">1704 × 192 px</p>
+          {/* Left gradient fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Right gradient fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+          {/* Row 1 - Scrolls LEFT */}
+          <div className="h-[48px] mb-[24px] overflow-hidden">
+            <div className="flex animate-scroll-left">
+              {/* Image placeholder - Replace src with uploaded brand logos image */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2 - Scrolls RIGHT */}
+          <div className="h-[48px] mb-[24px] overflow-hidden">
+            <div className="flex animate-scroll-right">
+              {/* Image placeholder - Replace src with uploaded brand logos image */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 3 - Scrolls LEFT */}
+          <div className="h-[48px] overflow-hidden">
+            <div className="flex animate-scroll-left">
+              {/* Image placeholder - Replace src with uploaded brand logos image */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="h-[48px] min-w-[1440px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30">
+                <span className="text-xs text-muted-foreground">Brand Logos Image (48px × 1440px+)</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Mobile: Cropped/centered view of brands image */}
-        <div className="lg:hidden w-full overflow-hidden">
-          <div 
-            className="w-full h-48 bg-secondary/50 rounded-xl border-2 border-dashed border-muted-foreground/30 flex items-center justify-center"
-          >
-            <div className="text-center text-muted-foreground">
-              <p className="text-sm font-medium">Brand Logos Image</p>
-              <p className="text-xs">(Centered portion)</p>
+        {/* Mobile: Simplified animated view */}
+        <div className="lg:hidden w-full overflow-hidden relative">
+          {/* Left gradient fade */}
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          
+          {/* Right gradient fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+
+          {/* Row 1 - Scrolls LEFT */}
+          <div className="h-[40px] mb-[16px] overflow-hidden">
+            <div className="flex animate-scroll-left-mobile">
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2 - Scrolls RIGHT */}
+          <div className="h-[40px] mb-[16px] overflow-hidden">
+            <div className="flex animate-scroll-right-mobile">
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 3 - Scrolls LEFT */}
+          <div className="h-[40px] overflow-hidden">
+            <div className="flex animate-scroll-left-mobile">
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
+              <div className="h-[40px] min-w-[400px] bg-secondary/50 flex items-center justify-center border border-dashed border-muted-foreground/30 rounded-lg">
+                <span className="text-xs text-muted-foreground">Brand Logos</span>
+              </div>
             </div>
           </div>
         </div>
