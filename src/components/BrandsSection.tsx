@@ -23,18 +23,15 @@ const BrandsSection = () => {
           </div>
         </div>
 
-        {/* Mobile: Horizontal scrolling brand logos */}
-        <div className="lg:hidden overflow-x-auto scrollbar-hide">
-          <div className="flex gap-4 pb-4">
-            {/* Placeholder brand logos for mobile */}
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div
-                key={i}
-                className="shrink-0 w-20 h-20 bg-secondary/50 rounded-xl border-2 border-dashed border-muted-foreground/30 flex items-center justify-center"
-              >
-                <span className="text-xs text-muted-foreground">Logo</span>
-              </div>
-            ))}
+        {/* Mobile: Cropped/centered view of brands image */}
+        <div className="lg:hidden w-full overflow-hidden">
+          <div 
+            className="w-full h-48 bg-secondary/50 rounded-xl border-2 border-dashed border-muted-foreground/30 flex items-center justify-center"
+          >
+            <div className="text-center text-muted-foreground">
+              <p className="text-sm font-medium">Brand Logos Image</p>
+              <p className="text-xs">(Centered portion)</p>
+            </div>
           </div>
         </div>
       </div>
