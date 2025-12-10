@@ -81,25 +81,31 @@ const ProductsSection = () => {
       The partial 4th card should appear from outside the viewport
     */
     <section className="bg-[#F4F7F7] overflow-hidden w-full">
-      <div className="py-[60px]">
-        <div className="relative flex flex-col lg:flex-row lg:items-center lg:gap-16 h-auto lg:h-[402px]">
+      <div className="lg:py-0">
+        <div className="relative flex flex-col lg:flex-row lg:items-center h-auto lg:h-[521px]">
           {/* 
-            Left side - Text content
+            Left side - Text content container
+            Figma specs: 488px width, 80px padding, 521px height
             HIGHER Z-INDEX: Cards swipe underneath this section when dragging carousel.
-            Has left padding to align with site content, but carousel extends full width right.
           */}
-          <div className="px-6 lg:pl-20 lg:pr-0 lg:w-[400px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7]">
-            {/* Products badge */}
-            <span className="inline-block px-4 py-1.5 text-xs font-medium text-[#345451] bg-white rounded-full mb-4 border border-[#E5E7EB]">
-              Products
-            </span>
-            
-            {/* Main heading */}
-            <h2 className="text-2xl lg:text-[40px] lg:leading-[1.1] font-bold text-[#0C1D1C] uppercase">
-              DISCOVER THE<br />
-              VALU IN EVERY<br />
-              MOMENT
-            </h2>
+          <div className="px-6 py-[60px] lg:p-[80px] lg:w-[488px] lg:h-[521px] lg:shrink-0 relative z-20 bg-[#F4F7F7] flex flex-col justify-center">
+            {/* 
+              Headline container
+              Figma specs: 305px width, 180px height, 16px gap
+            */}
+            <div className="flex flex-col items-start gap-4 lg:w-[305px] lg:max-w-[560px]">
+              {/* Products badge */}
+              <span className="inline-block px-4 py-1.5 text-xs font-medium text-[#345451] bg-white rounded-full border border-[#E5E7EB]">
+                Products
+              </span>
+              
+              {/* Main heading */}
+              <h2 className="text-2xl lg:text-[40px] lg:leading-[1.1] font-bold text-[#0C1D1C] uppercase">
+                DISCOVER THE<br />
+                VALU IN EVERY<br />
+                MOMENT
+              </h2>
+            </div>
           </div>
 
           {/* 
