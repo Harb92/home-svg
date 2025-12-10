@@ -73,15 +73,15 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-12 lg:py-20 bg-[#F4F7F7]">
+    <section className="py-12 lg:py-20 bg-[#F4F7F7] overflow-hidden">
       <div className="px-6 lg:px-20">
-        <div className="relative flex flex-col lg:flex-row lg:items-start lg:gap-16">
+        <div className="relative flex flex-col lg:flex-row lg:items-start lg:gap-8">
           {/* 
             Left side - Text content
             HIGHER Z-INDEX: Cards swipe underneath this section when dragging carousel.
             This creates the visual effect of cards going behind the text area.
           */}
-          <div className="lg:w-[300px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7]">
+          <div className="lg:w-[280px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7]">
             {/* Products badge */}
             <span className="inline-block px-4 py-1.5 text-xs font-medium text-[#345451] bg-white rounded-full mb-4 border border-[#E5E7EB]">
               Products
@@ -99,8 +99,10 @@ const ProductsSection = () => {
             Right side - Carousel
             SWIPE BY DRAGGING: No loop, cards end after last item.
             Cards go underneath the left text section when swiping.
+            OVERFLOW HIDDEN: Prevents carousel from expanding page width.
+            Shows 3 cards + portion of 4th card, swipe to see more.
           */}
-          <div className="flex-1 lg:overflow-visible relative z-10">
+          <div className="flex-1 overflow-hidden relative z-10">
             <Carousel
               opts={{
                 align: "start",
