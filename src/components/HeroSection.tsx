@@ -3,9 +3,13 @@ import heroBackground from "@/assets/hero-background.png";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[85vh] lg:min-h-screen flex flex-col justify-end overflow-hidden">
-      {/* Hero Background Image - recommended size: 1920px × 1080px */}
+      {/* 
+        Hero Background Image - recommended size: 1920px × 1080px
+        MOBILE RESPONSIVE NOTE: Currently showing right 50% of image on mobile.
+        This will be adjusted later via CMS dashboard for proper mobile-specific image.
+      */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[center_right] lg:bg-center"
         style={{
           backgroundImage: `url(${heroBackground})`
         }}
@@ -32,9 +36,6 @@ const HeroSection = () => {
           </button>
         </div>
       </div>
-
-      {/* Gradient overlay at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 lg:h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
