@@ -108,6 +108,10 @@ export default {
           from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },
         },
+        "slide-up-loop": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -118,6 +122,7 @@ export default {
         "scroll-right": "scroll-right 30s linear infinite",
         "scroll-left-mobile": "scroll-left 15s linear infinite",
         "scroll-right-mobile": "scroll-right 15s linear infinite",
+        "slide-up-loop": "slide-up-loop 8s linear infinite",
       },
     },
   },

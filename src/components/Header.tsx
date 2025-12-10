@@ -14,8 +14,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-6 lg:pt-10">
-      {/* Progressive blur background */}
-      <div className="absolute inset-0 h-36 bg-gradient-to-b from-white/80 via-white/40 to-transparent pointer-events-none" />
+      {/* Background removed per design requirements */}
       
       {/* Navbar Container */}
       <nav className="relative flex items-center justify-between w-full max-w-[1140px] h-14 lg:h-16 px-2 bg-white/80 backdrop-blur-[40px] rounded-full shadow-[37px_338px_136px_rgba(143,143,143,0.01),21px_190px_115px_rgba(143,143,143,0.05),9px_84px_85px_rgba(143,143,143,0.09),2px_21px_47px_rgba(143,143,143,0.1)]">
