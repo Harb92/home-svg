@@ -15,6 +15,14 @@ interface ProductCardProps {
     Upload product card back image here — recommended size: 280px × 400px 
   */
   backImage?: string;
+  /* 
+    FLIP TRANSITION IMAGE PLACEHOLDER
+    This third image briefly appears during the flip animation (mid-flip).
+    Upload a transition/intermediate image here — recommended size: 280px × 400px
+    This creates a smooth visual effect during the card flip.
+    CMS-editable: Can be adjusted via dashboard.
+  */
+  flipTransitionImage?: string;
 }
 
 const ProductCard = ({
@@ -23,11 +31,20 @@ const ProductCard = ({
   description,
   frontImage,
   backImage,
+  flipTransitionImage,
 }: ProductCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [showTransition, setShowTransition] = useState(false);
 
   const handleFlip = () => {
+    // Show transition image during flip animation
+    setShowTransition(true);
     setIsFlipped(!isFlipped);
+    
+    // Hide transition image after flip completes (matches animation duration)
+    setTimeout(() => {
+      setShowTransition(false);
+    }, 700);
   };
 
   return (
@@ -36,6 +53,33 @@ const ProductCard = ({
       style={{ perspective: "1000px" }}
       onClick={handleFlip}
     >
+      {/* 
+        FLIP TRANSITION IMAGE - Shows briefly during flip animation
+        This third image appears at the midpoint of the flip for a smooth transition effect.
+        CMS-editable: Upload via dashboard — recommended size: 280px × 400px
+      */}
+      <div 
+        className={`absolute inset-0 rounded-[32px] overflow-hidden transition-opacity duration-200 z-10 ${
+          showTransition ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ 
+          transitionDelay: showTransition ? "250ms" : "0ms",
+          transitionDuration: showTransition ? "200ms" : "100ms"
+        }}
+      >
+        {flipTransitionImage ? (
+          <img 
+            src={flipTransitionImage} 
+            alt={`Product ${id} transition`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00C4B3] to-[#FF5100] flex items-center justify-center">
+            <span className="text-white/40 text-sm">Transition {id}</span>
+          </div>
+        )}
+      </div>
+
       <div 
         className="relative w-full h-full transition-transform duration-700"
         style={{ 
