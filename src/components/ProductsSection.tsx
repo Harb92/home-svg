@@ -73,22 +73,28 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-12 lg:py-20 bg-[#F4F7F7] overflow-hidden">
-      <div className="px-6 lg:px-20">
-        <div className="relative flex flex-col lg:flex-row lg:items-start lg:gap-8">
+    /* 
+      PRODUCTS SECTION
+      Figma dimensions: Content area 1440px × 521px
+      Cards: 280px × 402px with 32px border-radius
+      Layout: Left text column + right carousel showing 3 cards + portion of 4th
+    */
+    <section className="bg-[#F4F7F7] overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-20 py-[60px]">
+        <div className="relative flex flex-col lg:flex-row lg:items-center lg:gap-12 h-auto lg:h-[402px]">
           {/* 
             Left side - Text content
             HIGHER Z-INDEX: Cards swipe underneath this section when dragging carousel.
             This creates the visual effect of cards going behind the text area.
           */}
-          <div className="lg:w-[280px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7]">
+          <div className="lg:w-[320px] lg:shrink-0 mb-8 lg:mb-0 relative z-20 bg-[#F4F7F7] pr-4">
             {/* Products badge */}
             <span className="inline-block px-4 py-1.5 text-xs font-medium text-[#345451] bg-white rounded-full mb-4 border border-[#E5E7EB]">
               Products
             </span>
             
             {/* Main heading */}
-            <h2 className="text-2xl lg:text-4xl font-bold text-[#0C1D1C] leading-tight uppercase">
+            <h2 className="text-2xl lg:text-[40px] lg:leading-[1.1] font-bold text-[#0C1D1C] uppercase">
               DISCOVER THE<br />
               VALU IN EVERY<br />
               MOMENT
