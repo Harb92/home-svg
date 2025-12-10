@@ -17,7 +17,7 @@ const Header = () => {
       {/* Background removed per design requirements */}
       
       {/* Navbar Container */}
-      <nav className="relative flex items-center justify-between w-full max-w-[1140px] h-14 lg:h-16 px-2 bg-white/80 backdrop-blur-[40px] rounded-full shadow-[37px_338px_136px_rgba(143,143,143,0.01),21px_190px_115px_rgba(143,143,143,0.05),9px_84px_85px_rgba(143,143,143,0.09),2px_21px_47px_rgba(143,143,143,0.1)]">
+      <nav className="relative flex items-center justify-between w-full max-w-[1140px] h-14 lg:h-16 px-2 bg-white/90 backdrop-blur-[40px] rounded-full shadow-sm border border-border/30">
         
         {/* Left - Logo */}
         <div className="flex items-center h-full">

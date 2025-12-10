@@ -112,6 +112,10 @@ export default {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(-50%)" },
         },
+        "slide-up-once": {
+          from: { transform: "translateY(100px)", opacity: "0" },
+          to: { transform: "translateY(0)", opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,6 +127,7 @@ export default {
         "scroll-left-mobile": "scroll-left 15s linear infinite",
         "scroll-right-mobile": "scroll-right 15s linear infinite",
         "slide-up-loop": "slide-up-loop 8s linear infinite",
+        "slide-up-once": "slide-up-once 0.8s ease-out forwards",
       },
     },
   },

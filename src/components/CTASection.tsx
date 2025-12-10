@@ -46,7 +46,7 @@ const CTASection = () => {
 
         {/* Desktop: Card with animated image and QR hover */}
         <div 
-          className="hidden lg:flex relative rounded-[32px] h-[395px] overflow-hidden"
+          className="hidden lg:flex relative rounded-[32px] h-[395px] border border-[#8A9A99]"
           style={{
             background: 'linear-gradient(90deg, #D0DDDC 0%, #99A4A3 100%)',
           }}
@@ -66,10 +66,10 @@ const CTASection = () => {
               On hover: transforms into QR code image
               QR image placeholder — recommended size: 120px × 120px (replaceable)
             */}
-            <button 
-              className="relative flex items-center gap-4 bg-white rounded-2xl transition-all duration-300 overflow-hidden"
+            <div 
+              className="relative cursor-pointer bg-white rounded-2xl transition-all duration-300 overflow-hidden"
               style={{
-                width: isHovered ? '140px' : 'auto',
+                width: isHovered ? '140px' : 'fit-content',
                 height: isHovered ? '140px' : 'auto',
                 padding: isHovered ? '10px' : '16px 20px',
               }}
@@ -78,9 +78,9 @@ const CTASection = () => {
             >
               {/* Default state: QR icon + text */}
               <div 
-                className={`flex items-center gap-4 transition-opacity duration-300 ${isHovered ? 'opacity-0 absolute' : 'opacity-100'}`}
+                className={`flex items-center gap-4 transition-opacity duration-300 ${isHovered ? 'opacity-0 invisible' : 'opacity-100 visible'}`}
               >
-                <div className="w-12 h-12 bg-[#102826] rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#102826] rounded-lg flex items-center justify-center flex-shrink-0">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="4" y="4" width="8" height="8" fill="white"/>
                     <rect x="20" y="4" width="8" height="8" fill="white"/>
@@ -99,7 +99,7 @@ const CTASection = () => {
                     <rect x="20" y="26" width="8" height="2" fill="white"/>
                   </svg>
                 </div>
-                <span className="text-[#102826] font-semibold text-base">
+                <span className="text-[#102826] font-semibold text-base whitespace-nowrap">
                   Download Valu App
                 </span>
               </div>
@@ -110,7 +110,7 @@ const CTASection = () => {
                 Replace this SVG with an uploaded QR code image when available
               */}
               <div 
-                className={`flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0 absolute'}`}
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
               >
                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="120" height="120" fill="white"/>
@@ -133,28 +133,21 @@ const CTASection = () => {
                   <rect x="75" y="90" width="30" height="15" fill="#102826"/>
                 </svg>
               </div>
-            </button>
+            </div>
           </div>
 
           {/* 
             Animated image container - DESKTOP
-            This container holds the sliding phone mockup image
-            Image slides from bottom to top in a continuous loop
+            This container holds the phone mockup image that slides up once
+            Image overflows outside the grey container border (taller than container)
             Recommended image size: 300px width × 500px height (replaceable)
           */}
-          <div className="absolute right-16 bottom-0 top-0 w-[280px] overflow-hidden flex items-end">
-            <div className="animate-slide-up-loop">
-              <img 
-                src={phoneMockup} 
-                alt="Valu App Preview" 
-                className="w-[280px] h-auto object-contain"
-              />
-              <img 
-                src={phoneMockup} 
-                alt="Valu App Preview" 
-                className="w-[280px] h-auto object-contain"
-              />
-            </div>
+          <div className="absolute right-16 bottom-0 w-[280px] h-[450px]">
+            <img 
+              src={phoneMockup} 
+              alt="Valu App Preview" 
+              className="w-[280px] h-auto object-contain animate-slide-up-once"
+            />
           </div>
         </div>
       </div>
