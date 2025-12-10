@@ -1,3 +1,5 @@
+import phoneMockup from "@/assets/phone-mockup.png";
+
 const CTASection = () => {
   return (
     <section className="bg-background lg:bg-[#D4C4B0] py-6 lg:py-24 px-6 lg:px-20">
@@ -25,11 +27,16 @@ const CTASection = () => {
               </button>
             </div>
 
-            {/* Phone mockup placeholder */}
+            {/* 
+              Phone mockup image - MOBILE ONLY
+              Upload phone image here — recommended size: 265px × 280px 
+            */}
             <div className="mt-4 flex justify-center w-full">
-              <div className="w-48 h-[280px] bg-[#102826]/10 rounded-[32px] border-2 border-dashed border-[#102826]/20 flex items-center justify-center">
-                <span className="text-xs text-[#102826]/40">Phone Mockup</span>
-              </div>
+              <img 
+                src={phoneMockup} 
+                alt="Valu App Preview" 
+                className="w-auto h-[280px] object-contain"
+              />
             </div>
           </div>
         </div>
@@ -78,7 +85,10 @@ const CTASection = () => {
             </button>
           </div>
 
-          {/* Phone mockup placeholder - Desktop */}
+          {/* 
+            Phone mockup placeholder - DESKTOP ONLY (hidden, no image)
+            Upload phone image here — recommended size: 224px × 384px 
+          */}
           <div className="absolute right-16 bottom-0">
             <div className="w-56 h-96 bg-[#102826]/10 rounded-[32px] border-2 border-dashed border-[#102826]/20 flex items-center justify-center">
               <span className="text-sm text-[#102826]/40 text-center px-4">Phone Mockup</span>
