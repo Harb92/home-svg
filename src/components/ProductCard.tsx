@@ -49,11 +49,11 @@ const ProductCard = ({
 
   return (
     <div 
-      className="relative w-[280px] h-[400px] cursor-pointer"
+      className="relative w-[280px] h-[402px] cursor-pointer"
       style={{ perspective: "1000px" }}
       onClick={handleFlip}
     >
-      {/* 
+      {/*
         FLIP TRANSITION IMAGE - Shows briefly during flip animation
         This third image appears at the midpoint of the flip for a smooth transition effect.
         CMS-editable: Upload via dashboard — recommended size: 280px × 400px
